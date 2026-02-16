@@ -1,0 +1,128 @@
+body{
+    width: 100vw;
+    height: auto;
+    margin: 0px;
+    display: grid;
+    
+}
+
+#index{
+    grid-template-areas:
+    "hd"
+    "tit"
+    "sal"
+    "inf"
+    "tim"
+    "fot";
+}
+
+body > *{
+    width: 100%;
+}
+
+header{
+    grid-area:hd;
+    background-color:rgb(35, 51, 51,0);
+    height: 6vh;
+
+    top: 0;
+    position:fixed;
+    transition: background-color 0.3s ease-in-out;
+    display: flex;
+    justify-content:end;
+}
+
+.menu{
+    z-index: 10;
+    left: -100vw;
+    width: 80vw;
+    height: 100vh;
+    position: fixed;
+    transition: left 0.3s;
+    background-color: hotpink;
+}
+.fadelayer{
+    position: fixed;
+    display: none;
+    height: 100vh;
+    width: 100vw;
+    z-index: 9;
+    background: rgb(0, 0, 0,0.5);
+}
+
+.title{
+    grid-area: tit;
+    background-image: url(/img/mostafa_meraji-barber-shop-5212059_1920.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 85vh;
+}
+
+#salonger{
+    grid-area: sal;
+    background-color: aquamarine;
+}
+
+#indexinfobox{
+    grid-area: inf;
+    background-color: blueviolet;
+}
+
+#indexoppentider{
+    grid-area: tim;
+    background-color: burlywood;
+}
+
+footer{
+    grid-area: fot;
+    background-color: wheat;
+}
+
+
+
+
+
+
+/* ---MOBILE--- */
+@media screen and (max-width:650px) {
+    body > *{}
+
+    header{}
+
+    .title{}
+
+    #salonger{
+        height: 150vh;
+    }
+
+    #indexinfobox{
+        height: 150vh;
+    }
+
+    #indexoppentider{
+        height: 50vh;
+    }
+
+    footer{
+        height: 50vh;
+    }
+
+    .menubutton{
+    display:block;
+    margin: 5px 15px 5px 5px ;
+    }
+    
+}
+
+
+
+/* ---JAVA SCRIPT--- */
+.showmenu{
+    left: 0;
+}
+.visible{
+    display: block;
+}
+.viewheader {
+  background-color:rgb(35, 51, 51, 1);
+}
