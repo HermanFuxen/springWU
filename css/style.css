@@ -1,3 +1,4 @@
+
 body{
     width: 100vw;
     height: auto;
@@ -17,7 +18,7 @@ body{
 }
 
 body > *{
-    width: 100%;
+    width: 100vw;
 }
 
 header{
@@ -56,17 +57,36 @@ header{
     background-position: center;
     background-size: cover;
     height: 85vh;
+    display: flex;
+    flex-wrap:wrap;
+    color: rgb(240, 248, 255,0.5);
+    align-items: center;
+    overflow-wrap: anywhere;
+    font-size:min(30vw,15vh);
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
+
+h1{margin:0px;}
+p{font-family:'inter';}
+a{color: inherit;text-decoration: none;}
 
 #salonger{
     grid-area: sal;
-    background-color: aquamarine;
+    background-color: rgb(65, 65, 65);
+    display: unset;
+    font-size: 20px;
 }
 
 #indexinfobox{
     grid-area: inf;
     background-color: blueviolet;
 }
+#indexinfobox > *{ /*istället för en subclass*/
+}
+
+#indexinfo1{}
+#indexinfo2{}
+
 
 #indexoppentider{
     grid-area: tim;
@@ -78,22 +98,102 @@ footer{
     background-color: wheat;
 }
 
+#salong1{background-image: url(/img/iffany-hairdressers-8848868_1280.png);}
+#salong2{background-image: url(/img/iffany2-hairdressers-8848870_1280.png);}
+
+.salong{
+    background-position: center;
+    background-size: cover;
+    color: antiquewhite;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    text-shadow: 2px 2px 4px black;
+}
 
 
+.larger{
+    font-weight: bolder;
+    display: block;
+    background-color: rgb(0, 0, 0,0.5);
+    border-radius: 5px;
+    padding: 3px;
+}
 
+.button{
+    display: block;
+    background-color:burlywood;
+    color: rgb(47, 47, 47);
+    width: max-content;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px;
+    text-shadow: none;
+    font-weight: bolder;
+}
+.button:hover{color: rgb(75, 75, 75);background-color:rgb(232, 194, 145);}
 
 
 /* ---MOBILE--- */
-@media screen and (max-width:650px) {
+@media screen and (max-width:750px) {
+    
+    .title{
+        justify-content: center;
+    }
+
+    #salonger{
+        display: block;
+    }
+    .salong{
+        margin: 10vw;
+    }
+    .button{font-size: 30px;}
+    .larger{font-size:45px;}
+
+    #indexinfobox{height: 150vh;}
+
+    #indexoppentider{
+        height: 50vh;
+    }
+
+    footer{
+        height: 50vh;
+    }
+
+    .menubutton{
+    display:block;
+    margin: 5px 15px 5px 5px ;
+    }
+    
+}
+
+
+/* ---DESKTOP--- */
+@media screen and (min-width:750px) {
     body > *{}
 
     header{}
 
     .title{}
 
-    #salonger{
-        height: 150vh;
+    .title > *{
+        margin-left: 143px;
     }
+
+    #salonger{
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .salong{
+        width: 40vw;
+        margin: 5vw;
+        font-size: max(1vw,15px);
+    }
+    .button{font-size: max(1.8vw,25px);}
+    .larger{font-size: max(2.6vw,35px);}
+
 
     #indexinfobox{
         height: 150vh;
@@ -113,6 +213,7 @@ footer{
     }
     
 }
+
 
 
 
