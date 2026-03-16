@@ -7,20 +7,10 @@ body{
     background-color: #4a4a4a;
     
 }
-
-#index{
-    grid-template-areas:
-    "hd"
-    "tit"
-    "sal"
-    "inf"
-    "tim"
-    "fot";
-}
-
 body > *{
     width: 100vw;
 }
+
 
 header{
     grid-area:hd;
@@ -46,6 +36,9 @@ header{
     transition: left 0.3s;
     background-color: hotpink;
 }
+
+.menubutton{margin: 5px 15px 5px 5px ;}
+
 .fadelayer{
     position: fixed;
     display: none;
@@ -55,25 +48,75 @@ header{
     background: rgb(0, 0, 0,0.5);
 }
 
+p{font-family:'inter';}
+a{color: inherit;text-decoration: none;}
+hr{width: 92vw; border:none;border-top: burlywood dashed 2px;}
+
+
+footer{
+    grid-area: fot;
+    background: #4a4a4a;
+    background: linear-gradient(0deg, rgba(74, 74, 74, 1) 0%, rgba(44, 44, 44, 1) 100%);
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    height: auto;
+    font-size: 25px;
+    color: rgb(235, 220, 205);
+    padding:5vw 0vw 5vw 0vw;
+}
+
+
+.larger{
+    font-weight: bolder;
+    display: block;
+}
+
+.darkbg{
+    background-color: rgb(0, 0, 0,0.5);
+    border-radius: 5px;
+    padding: 3px;
+}
+
+.button{
+    display: block;
+    background-color:rgb(208,182,147);
+    color: rgb(47, 47, 47);
+    width: max-content;
+    padding: 10px;
+    text-shadow: none;
+    font-weight: bolder;
+}
+.button:hover{color: rgb(75, 75, 75);background-color:rgb(235, 206, 168);}
+
+
+
+/* INDEX */
+
+#index{
+    grid-template-areas:
+    "hd"
+    "tit"
+    "sal"
+    "inf"
+    "tim"
+    "fot";
+}
 .title{
     grid-area: tit;
     background-image: url(/img/mostafa_meraji-barber-shop-5212059_1920.jpg);
     background-position: center;
     background-size: cover;
-    height: 85vh;
     display: flex;
     flex-wrap:wrap;
+    flex-direction: column;
     color: rgb(240, 248, 255,0.5);
-    align-items: center;
     overflow-wrap: anywhere;
     font-size:min(30vw,15vh);
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
-
-h1{margin:0px;}
-p{font-family:'inter';}
-a{color: inherit;text-decoration: none;}
-hr{width: 92vw; border:none;border-top: burlywood dashed 2px;}
+.title > *{margin:0px;}
 
 #salonger{
     grid-area: sal;
@@ -99,13 +142,10 @@ hr{width: 92vw; border:none;border-top: burlywood dashed 2px;}
 
 #indexinfobox{
     grid-area: inf;
-    background-color: #2c2c2c;
-    /* rgb(234, 210, 162); */
-    /* rgb(239, 230, 199); */
-    
+    background-color: #2c2c2c;  
 }
 
-#indexinfobox > div{ /*istället för en subclass*/
+#indexinfobox > div{
     display: flex;
     justify-content: space-between;
     margin: 6vw auto 6vw auto;
@@ -126,136 +166,90 @@ hr{width: 92vw; border:none;border-top: burlywood dashed 2px;}
 
 
 #indexoppentider{
-    color: antiquewhite;
+    color: rgb(235, 220, 205);
     grid-area: tim;
     background-color: #2c2c2c;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    height: max(40vh,auto);
-    padding-bottom: 5vw;    
+    height:auto;
 }
 #indexoppentider > .larger{margin: 0px;}
 #indexoppentider > div{display: flex; justify-content: space-between;}
 
-footer{
-    grid-area: fot;
-    background-color:#4a4a4a;
-    flex-direction: column;
-    align-items: center;
-    display: flex;
-    height: auto;
-    font-size: 25px;
+
+/* domkyrkan */
+
+#domkyrkan{
+    grid-template-areas:
+    "hd"
+    "pinf"
+    "pep"
+    "fot";
 }
 
+.platsinfo{}
+
+.personer{}
+
+.personer > div{}
+.personer > div > div{}
+.personer > div > img{}
 
 
-
-.larger{
-    font-weight: bolder;
-    display: block;
-}
-.darkbg{
-    background-color: rgb(0, 0, 0,0.5);
-    border-radius: 5px;
-    padding: 3px;
-}
-
-.button{
-    display: block;
-    background-color:rgb(208,182,147);
-    color: rgb(47, 47, 47);
-    width: max-content;
-    padding: 10px;
-    text-shadow: none;
-    font-weight: bolder;
-}
-.button:hover{color: rgb(75, 75, 75);background-color:rgb(235, 206, 168);}
 
 
 /* ---MOBILE--- */
 @media screen and (max-width:750px) {
     
-    .title{
-        justify-content: center;
-    }
-
-    #salonger{
-        display: block;
-    }
-
-    .salong{
-        margin: 10vw;
-    }
-    .button{font-size: 25px;}
-    .larger{font-size:40px;}
+    h1{font-size: 30vw}
+    .button{font-size: 20px;}
+    .larger{font-size:30px;}
+    .menubutton{display:block;}
+    .menu{display: block;}
     
-
-    #indexinfobox > div{flex-direction: column;padding:2vw; align-items: center;}
-    #indexinfobox > div > div{width: 80%;font-size: 20px;}
+    
+    /* INDEX */
+    .title{justify-content: center; height: 95vh;font-size: 3.7vw;align-items: center;}
+    #salonger{display: block; font-size: 15px;}
+    .salong{margin:20vw 5vw 20vw 5vw;}
+    #indexinfobox{padding-bottom: 10vw;}
+    #indexinfobox > div{flex-direction: column;padding:1.5vw; align-items: center;width:85vw;margin:20vw auto 10vw auto;}
+    #indexinfobox > div > div{width: 90%;font-size: 15px;}
+    #indexinfobox >div> img{width: 80vw; margin-top: 2.5vw;} /*images för indexinfo*/
     #flip{flex-direction: column;}
-    #indexinfobox >div> img{width: 80vw;} /*images för indexinfo*/
+    #indexoppentider > div{font-size: 15px; width: 80vw;}
+    
+    /* Domkyrkan */
 
-
-    #indexoppentider{}
-    #indexoppentider > div{font-size: 20px; width: 80vw;}
-
-    footer{}
-
-    .menubutton{
-    display:block;
-    margin: 5px 15px 5px 5px ;
-    }
     
 }
 
 
 /* ---DESKTOP--- */
 @media screen and (min-width:750px) {
-    body > *{}
 
-    header{}
-
-    .title{}
-
-    .title > *{
-        margin-left: 143px;
-    }
-
-    #salonger{
-        display: flex;
-        justify-content: space-around;
-    }
-
+    .button{font-size: max(1.5vw,20px);}
+    .larger{font-size: max(2.5vw,30px);}
+    .menubutton{display:none;}
+    .menu{display: none;}
+    
+    
+    /* index */
+    .title{height: 85vh;justify-content: center;align-items: center;}
+    .title > p{font-size:20px;margin-top: -30px;}
+    .title > *{margin-right: 55vw}
+    #salonger{display: flex;justify-content: space-around;}
+    #salonger > *{width: 40vw;margin: 5vw;font-size: max(1vw,15px);}
+    #indexinfobox{padding-bottom: 5vw;}
     #indexinfobox>div{padding: 2.5vw 0vh 2.5vw 5vh;}
-    #flip{flex-direction: row-reverse;padding: 2.5vw 5vh 2.5vw 0vh !important;}
     #indexinfobox >div> img{width: 45vw;} /*images för indexinfo*/
-
-
-
-    #salonger > *{
-        width: 40vw;
-        margin: 5vw;
-        font-size: max(1vw,15px);
-    }
-    .button{font-size: max(1.8vw,25px);}
-    .larger{font-size: max(2.6vw,35px);}
-
-
-    #indexinfobox{
-        height: auto;
-    }
-
+    #flip{flex-direction: row-reverse;padding: 2.5vw 5vh 2.5vw 0vh !important;}
     #indexoppentider{}
     #indexoppentider > div{font-size:max(1vw,15px); width: 30vw;}
 
-    footer{}
 
-    .menubutton{
-    display:block;
-    margin: 5px 15px 5px 5px ;
-    }
     
 }
 
