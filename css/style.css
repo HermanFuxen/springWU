@@ -17,7 +17,6 @@ header{
     background-color:rgb(0, 0, 0,0);
     height: 6vh;
     
-    top: 0;
     z-index: 9;
     position:fixed;
     transition: background-color 0.3s ease-in-out;
@@ -40,7 +39,7 @@ header{
     font-size:min(30vw,15vh);
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
-.title > *{margin:0px;}
+.title > *{margin:0px; color: rgb(240, 248, 255,0.5)}
 .title > .placename {position: absolute; margin: auto auto auto 25vw; font-size: 7vw;}
 
 .menu{
@@ -64,10 +63,21 @@ header{
     background: rgb(0, 0, 0,0.5);
 }
 
-p{font-family:'inter';}
+p{font-family:'inter'; color: rgb(235, 220, 205);}
 a{color: inherit;text-decoration: none;}
 hr{width: 92vw; border:none;border-top: burlywood dashed 2px;}
 
+.oppentider{
+    grid-area: opp;
+    background-color: #2c2c2c;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height:auto;
+}
+.oppentider > .larger{margin: 0px;}
+.oppentider > div{display: flex; justify-content: space-between;}
 
 footer{
     grid-area: fot;
@@ -87,6 +97,7 @@ footer{
 .larger{
     font-weight: bolder;
     display: block;
+    text-align: center;
 }
 
 .darkbg{
@@ -118,7 +129,7 @@ footer{
     "tit"
     "sal"
     "inf"
-    "tim"
+    "opp"
     "fot";
 }
 
@@ -132,7 +143,6 @@ footer{
 .salong{
     background-position: center;
     background-size: cover;
-    color: antiquewhite;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -165,22 +175,9 @@ footer{
     width: 30vw;
     margin: 0vw 3vw 0vw 3vw;
     font-size: 15px;
-    color: rgb(235, 220, 205);
 }
 
 
-#indexoppentider{
-    color: rgb(235, 220, 205);
-    grid-area: tim;
-    background-color: #2c2c2c;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    height:auto;
-}
-#indexoppentider > .larger{margin: 0px;}
-#indexoppentider > div{display: flex; justify-content: space-between;}
 
 
 /* domkyrkan */
@@ -191,33 +188,43 @@ footer{
     "tit"
     "pinf"
     "pep"
+    "hit"
+    "opp"
     "fot";
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #domkyrkantitle{background-image: url(/img/iffany-hairdressers-8848868_1280.png);}
+#domkyrkantitle > .placename {position: absolute; }
 
 .platsinfo{
     grid-area: pinf;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
-    color:rgb(235, 220, 205);
+    justify-content: space-between;
     height: auto;
 }
-
-
+.platsinfo > img{box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;}
+.platsinfo > div{display:flex; flex-direction: column; align-items: center; font-size: 13px;}
+.platsinfo > div > .larger{margin-bottom: 5px;}
+.platsinfo > div > div{text-align: center;}
+.platsinfo > div > div > p{font-size: 22px;}
+.platsinfo > div > div > div{display: flex; justify-content: space-between; margin-top: -30px;}
 
 .personer{
     grid-area: pep;
     background-color:#2c2c2c;
 }
 
-.personer > div{background-color: #4a4a4a; margin: 10px;height: 100px;}
-.personer > div > div {}
-.personer > div > img{}
+.hittahit{
+    grid-area: hit;
+}
 
 
+.hittahit > img{}
+.hittahit > div{}
+
+iframe{width: 30vw; height: 20vw; display: block;}
 
 
 /* ---MOBILE--- */
@@ -229,6 +236,7 @@ footer{
     .menubutton{display:block;}
     .menu{display: block;}
     .title{justify-content: center; height: 95vh;font-size: 3.7vw;align-items: center;}
+    .oppentider > div{font-size: 15px; width: 80vw;}
     
     
     /* INDEX */
@@ -239,20 +247,20 @@ footer{
     #indexinfobox > div > div{width: 90%;font-size: 15px;}
     #indexinfobox >div> img{width: 80vw; margin-top: 2.5vw;} /*images för indexinfo*/
     #flip{flex-direction: column;}
-    #indexoppentider > div{font-size: 15px; width: 80vw;}
     
     /* Domkyrkan */
-    #domkyrkantitle > .placename {position: absolute; margin: auto auto 4% auto; font-size: 10vw;}
+    #domkyrkantitle > .placename {margin: auto auto 4% auto; font-size: 10vw;}
     
-    .platsinfo{flex-direction: column; padding: 25vw 0px 10vw 0px;}
-    .platsinfo > img{width: 90vw; height: auto;}
-    .platsinfo > div{display:flex; flex-direction: column; align-items: center; width: 85vw; font-size: 13px;}
-    .platsinfo > div > .larger{margin-bottom: 5px;}
-    .platsinfo > div > div{width: 80vw; text-align: center;}
-    .platsinfo > div > div > p{font-size: 22px;}
-    .platsinfo > div > div > div{display: flex; justify-content: space-between; margin-top: -30px;}
-    
-    
+    .platsinfo{flex-direction: column; padding: 22vw 0px 10vw 0px;}
+    .platsinfo > img{width: 90vw; height: auto; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;}
+    .platsinfo > div{width: 85vw;}
+    .platsinfo > div > div{width: 80vw;}    
+
+    .personer > div{background-color: #4a4a4a; width:min-content; margin: 15vw auto 15vw auto; padding: 2.5vw 0vh 2.5vw 0vh; display: flex;flex-direction: column; justify-content: space-between; align-items: center;}
+    .personer > div > div {width: 85vw; margin:0px 2vw 0px 2vw; font-size: 15px;}
+    .personer > div > img{width: 85vw;}
+
+
 }
 
 
@@ -266,6 +274,8 @@ footer{
     .title{height: 95vh;justify-content: center;align-items: center;}
     .title > p{font-size:25px;margin-top: -30px;}
     .title > *{margin-right: 55vw}
+    .oppentider > div{font-size:max(1vw,15px); width: 30vw;}
+    .oppentider > a >*{margin: 2.5vw 0px 0px 0px;}
     
     
     /* index */
@@ -275,19 +285,18 @@ footer{
     #indexinfobox>div{padding: 2.5vw 0vh 2.5vw 5vh;}
     #indexinfobox >div> img{width: 45vw;} /*images för indexinfo*/
     #flip{flex-direction: row-reverse;padding: 2.5vw 5vh 2.5vw 0vh !important;}
-    #indexoppentider > div{font-size:max(1vw,15px); width: 30vw;}
-    #indexoppentider > a >*{margin: 2.5vw 0px 0px 0px;}
 
     /* Domkyrkan */
-    #domkyrkantitle > .placename {position: absolute; margin: auto auto auto 25vw; font-size: 7vw;}
+    #domkyrkantitle > .placename {margin: auto auto auto 25vw; font-size: 7vw;}
     
-    .platsinfo{flex-direction: row;}
-    .platsinfo > img{width: 40vw; height: auto;}
-    .platsinfo > div{display:flex; flex-direction: column; align-items: center; width: 85vw; font-size: 13px;}
-    .platsinfo > div > .larger{margin-bottom: 5px;}
-    .platsinfo > div > div{width: 80vw; text-align: center;}
-    .platsinfo > div > div > p{font-size: 22px;}
-    .platsinfo > div > div > div{display: flex; justify-content: space-between; margin-top: -30px;}
+    .platsinfo{flex-direction: row; padding: 4vw 0px 4vw 0px;}
+    .platsinfo > img{width: auto; height: 30vw; margin-left: 4vw;}
+    .platsinfo > div{width:30vw; margin-right: 10vw}
+    .platsinfo > div > div{width: 100%;}
+
+    .personer > div{background-color: #4a4a4a; width:min-content; margin: 3vw auto 3vw auto; padding: 2.5vw 0vh 2.5vw 5vh; display: flex; justify-content: space-between;}
+    .personer > div > div {width: 25vw; margin:0px 2.5vw 0px 2.5vw; font-size: 15px;}
+    .personer > div > img{width: 35vw;}
 
 }
 
