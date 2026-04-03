@@ -36,7 +36,7 @@ header{
     flex-direction: column;
     color: rgb(240, 248, 255,0.5);
     overflow-wrap: anywhere;
-    font-size:min(30vw,15vh);
+    font-size:min(14vw,15vh);
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 .title > *{margin:0px; color: rgb(240, 248, 255,0.5)}
@@ -63,21 +63,10 @@ header{
     background: rgb(0, 0, 0,0.5);
 }
 
-p{font-family:'inter'; color: rgb(235, 220, 205);}
+p{font-family:'inter'; color: rgb(235, 220, 205);font-size: 14px;}
 a{color: inherit;text-decoration: none;}
 hr{width: 92vw; border:none;border-top: burlywood dashed 2px;}
 
-.oppentider{
-    grid-area: opp;
-    background-color: #2c2c2c;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    height:auto;
-}
-.oppentider > .larger{margin: 0px;}
-.oppentider > div{display: flex; justify-content: space-between;}
 
 footer{
     grid-area: fot;
@@ -88,10 +77,10 @@ footer{
     justify-content: space-between;
     display: flex;
     height: auto;
-    font-size: 25px;
     color: rgb(235, 220, 205);
     padding:5vw 0vw 5vw 0vw;
 }
+footer > p{font-size: 25px;}
 
 
 .larger{
@@ -135,9 +124,9 @@ footer{
 
 #salonger{
     grid-area: sal;
-    background-color: #2c2c2c;
     display: unset;
     font-size: 20px;
+    background-color: #2c2c2c;
 }
 
 .salong{
@@ -156,7 +145,7 @@ footer{
 
 #indexinfobox{
     grid-area: inf;
-    background-color: #2c2c2c;  
+    background-color: #2c2c2c;
 }
 
 #indexinfobox > div{
@@ -177,6 +166,17 @@ footer{
     font-size: 15px;
 }
 
+#oppentider{
+    grid-area: opp;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #2c2c2c;
+    height:auto;
+}
+#oppentider > .larger{margin: 0px;}
+#oppentider > div{display: flex; justify-content: space-between;}
 
 
 
@@ -189,7 +189,6 @@ footer{
     "pinf"
     "pep"
     "hit"
-    "opp"
     "fot";
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -218,14 +217,12 @@ footer{
 
 .hittahit{
     grid-area: hit;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: fit-content;
 }
-
-
-.hittahit > img{}
-.hittahit > div{}
-
-iframe{width: 30vw; height: 20vw; display: block;}
-
+#spacer{background-color: #2c2c2c; width: 100%;}
 
 /* ---MOBILE--- */
 @media screen and (max-width:750px) {
@@ -236,7 +233,6 @@ iframe{width: 30vw; height: 20vw; display: block;}
     .menubutton{display:block;}
     .menu{display: block;}
     .title{justify-content: center; height: 95vh;font-size: 3.7vw;align-items: center;}
-    .oppentider > div{font-size: 15px; width: 80vw;}
     
     
     /* INDEX */
@@ -246,6 +242,7 @@ iframe{width: 30vw; height: 20vw; display: block;}
     #indexinfobox > div{flex-direction: column;padding:1.5vw; align-items: center;width:85vw;margin:20vw auto 10vw auto;}
     #indexinfobox > div > div{width: 90%;font-size: 15px;}
     #indexinfobox >div> img{width: 80vw; margin-top: 2.5vw;} /*images för indexinfo*/
+    #oppentider > div{font-size: 15px; width: 80vw;}
     #flip{flex-direction: column;}
     
     /* Domkyrkan */
@@ -256,10 +253,17 @@ iframe{width: 30vw; height: 20vw; display: block;}
     .platsinfo > div{width: 85vw;}
     .platsinfo > div > div{width: 80vw;}    
 
+    .personer{padding-bottom: 15vw;}
     .personer > div{background-color: #4a4a4a; width:min-content; margin: 15vw auto 15vw auto; padding: 2.5vw 0vh 2.5vw 0vh; display: flex;flex-direction: column; justify-content: space-between; align-items: center;}
     .personer > div > div {width: 85vw; margin:0px 2vw 0px 2vw; font-size: 15px;}
     .personer > div > img{width: 85vw;}
 
+    .hittahit{flex-direction: column;}
+    iframe{width: 90vw; height:40vh; display: block; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;margin-left: 4vw;}
+    .hittahit > div{width: 80vw; display: flex; flex-direction: column; align-items: center; margin: 5vw auto 0px auto;}
+    .hittahit > div > p{margin: 0px;}
+    .hittahit > div > div{display: flex; justify-content: space-between; width:100%;}
+    #spacer{display: block; height: 25vw; margin-top:12vw;}
 
 }
 
@@ -268,35 +272,46 @@ iframe{width: 30vw; height: 20vw; display: block;}
 @media screen and (min-width:750px) {
 
     .button{font-size: max(1.5vw,20px);}
-    .larger{font-size: max(2.5vw,30px);}
+    .larger{font-size: min(max(2.5vw,30px),45px);}
     .menubutton{display:none;}
     .menu{display: none;}
     .title{height: 95vh;justify-content: center;align-items: center;}
     .title > p{font-size:25px;margin-top: -30px;}
     .title > *{margin-right: 55vw}
-    .oppentider > div{font-size:max(1vw,15px); width: 30vw;}
-    .oppentider > a >*{margin: 2.5vw 0px 0px 0px;}
     
     
     /* index */
     #salonger{display: flex;justify-content: space-around;}
     #salonger > *{width: 40vw;margin: 5vw;font-size: max(1vw,15px);}
+
     #indexinfobox{padding-bottom: 5vw;}
     #indexinfobox>div{padding: 2.5vw 0vh 2.5vw 5vh;}
     #indexinfobox >div> img{width: 45vw;} /*images för indexinfo*/
-    #flip{flex-direction: row-reverse;padding: 2.5vw 5vh 2.5vw 0vh !important;}
+    #indexinfobox > #flip{flex-direction: row-reverse;padding: 2.5vw 5vh 2.5vw 0vh;}
+
+    #oppentider > div{font-size:max(1vw,15px); width: 30vw;}
+    #oppentider > a >*{margin: 2.5vw 0px 0px 0px;}
+
 
     /* Domkyrkan */
     #domkyrkantitle > .placename {margin: auto auto auto 25vw; font-size: 7vw;}
     
     .platsinfo{flex-direction: row; padding: 4vw 0px 4vw 0px;}
-    .platsinfo > img{width: auto; height: 30vw; margin-left: 4vw;}
+    .platsinfo > img{width: 46vw; min-height: 90%; margin-left: 4vw; object-fit: cover;}
     .platsinfo > div{width:30vw; margin-right: 10vw}
     .platsinfo > div > div{width: 100%;}
 
     .personer > div{background-color: #4a4a4a; width:min-content; margin: 3vw auto 3vw auto; padding: 2.5vw 0vh 2.5vw 5vh; display: flex; justify-content: space-between;}
     .personer > div > div {width: 25vw; margin:0px 2.5vw 0px 2.5vw; font-size: 15px;}
-    .personer > div > img{width: 35vw;}
+    .personer > div > img{width: 35vw; object-fit: cover;}
+
+    .hittahit{flex-direction:row; padding-bottom: 5vw;}
+    iframe{width: 46vw; min-height:25vw; display: block; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;margin-left: 4vw;}
+    .hittahit > p{width: 100%;}
+    .hittahit > div{max-width:500px; min-width:220px; width: 30vw; display: flex; flex-direction: column; align-items: center; margin: 0px auto 0px auto;}
+    .hittahit > div > p{margin: 0px;}
+    .hittahit > div > div{display: flex; justify-content: space-between; width:100%;}
+    #spacer{display:none}
 
 }
 
