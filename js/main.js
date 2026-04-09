@@ -10,15 +10,11 @@ function showhead(){
 }
 
 
-let button = document.querySelector("img.menubutton")
-button.addEventListener("click",showMenu)
+document.querySelector("img.menubutton").addEventListener("click",showMenu)
 
-let graylayer = document.querySelector("div.fadelayer");
-graylayer.addEventListener("click",showMenu)
+document.querySelector("div.menu").addEventListener("click",showMenu)
 
 function showMenu(){
-    let menu = document.querySelector("nav.menu");
-    menu.classList.toggle("showmenu");
-
-    graylayer.classList.toggle("visible");
-};
+  document.querySelector("div.menu").classList.toggle("hide");
+  document.querySelectorAll("div.menu p").forEach(p => {p.classList.toggle("hidee");});
+};  

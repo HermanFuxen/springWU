@@ -15,16 +15,17 @@ body > *{
 header{
     grid-area:hd;
     background-color:rgb(0, 0, 0,0);
-    height: 6vh;
+    height: min-content;
     
     z-index: 9;
     position:fixed;
-    transition: background-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out, padding-top 0.3s ease-in-out;
     
     display: flex;
     justify-content:end;
     border-bottom-style: none;
     border:rgb(1, 1, 1, 0);
+    padding-top: 10px;
 }
 
 .title{
@@ -40,30 +41,28 @@ header{
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 .title > *{margin:0px; color: rgb(240, 248, 255,0.5)}
-.title > .placename {position: absolute; margin: auto auto auto 25vw; font-size: 7vw;}
+.title > .placename {position: absolute; margin: auto auto auto 25vw; font-size: 7vw; text-shadow:0px 0px 15px rgba(0, 0, 0, 0.8);}
+
+
+.menubutton{margin: 5px 15px 5px 5px ;height: 35px;}
 
 .menu{
-    z-index: 10;
-    left: -100vw;
-    width: 80vw;
-    height: 100vh;
     position: fixed;
-    transition: left 0.3s;
-    background-color: hotpink;
-}
-
-.menubutton{margin: 5px 15px 5px 5px ;}
-
-.fadelayer{
-    position: fixed;
-    display: none;
+    display: block;
     height: 100vh;
     width: 100vw;
     z-index: 9;
-    background: rgb(0, 0, 0,0.5);
+    left:0px;
+    background-color: rgb(0, 0, 0,0.8);
+    transition: background-color 0.3s ease-in-out;
 }
+.menu > div {height: 100%;display: flex; flex-direction: column;align-items: center; justify-content: center;}
+.menu p{font-size: 30px; margin: 3vh; transition: color 0.3s ease-in-out,background-color 0.3s ease-in-out;}
+.menu > div > p{text-decoration: underline;}
 
-p{font-family:'inter'; color: rgb(235, 220, 205);font-size: 14px;}
+.headbok{display: block; background-color:rgba(208,182,147,1); border-radius: 3px; padding: 7px; color:#2f2f2f; font-weight:900;}
+
+p{font-family:'inter'; color: rgba(235, 220, 205, 1);font-size: 14px;}
 a{color: inherit;text-decoration: none;}
 hr{width: 92vw; border:none;border-top: burlywood dashed 2px;}
 
@@ -98,7 +97,7 @@ footer > p{font-size: 25px;}
 .button{
     display: block;
     background-color:rgb(208,182,147);
-    color: rgb(47, 47, 47);
+    color: #2f2f2f;
     width: max-content;
     padding: 10px;
     text-shadow: none;
@@ -141,7 +140,7 @@ footer > p{font-size: 25px;}
 }
 
 #salong1{background-image: url(/img/iffany-hairdressers-8848868_1280.png);}
-#salong2{background-image: url(/img/iffany2-hairdressers-8848870_1280.png);}
+#salong2{background-image: url(/img/2Victor-Noblesse-high-51___media_library_original_4000_2668.jpg);}
 
 #indexinfobox{
     grid-area: inf;
@@ -180,9 +179,16 @@ footer > p{font-size: 25px;}
 
 
 
-/* domkyrkan */
+/* SALONGER */
+/* SALONGER > salongspesefikt */
+#domkyrkantitle{background-image: url(/img/iffany-hairdressers-8848868_1280.png);}
+#johannebergtitle{background-image: url(/img/2Victor-Noblesse-high-51___media_library_original_4000_2668.jpg);}
 
-#domkyrkan{
+
+
+
+/* SALONGER > allmänt */
+.salongbody{
     grid-template-areas:
     "hd"
     "tit"
@@ -190,11 +196,9 @@ footer > p{font-size: 25px;}
     "pep"
     "hit"
     "fot";
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
-#domkyrkantitle{background-image: url(/img/iffany-hairdressers-8848868_1280.png);}
-#domkyrkantitle > .placename {position: absolute; }
+.placename {position: absolute;}
 
 .platsinfo{
     grid-area: pinf;
@@ -224,14 +228,59 @@ footer > p{font-size: 25px;}
 }
 #spacer{background-color: #2c2c2c; width: 100%;}
 
+
+/* TJANSTER */
+#tjanstertitle{background-image: url(/img/1guvo59-hairdresser-4666064.jpg);height:50vh;}
+
+
+#tjansterbody{
+    grid-template-areas:
+    "hd"
+    "tit"
+    "tja"
+    "fot";
+}
+
+#tjanster{
+    grid-area: tja;
+    height: auto;
+    background-color: #2c2c2c;
+    padding-bottom: 100px;
+}
+
+#tjanster > div > p {width: 100%; margin: 100px 0px -10px 0px; text-align: left; font-size: 25px;}
+#tjanster > div {display: flex; flex-direction: row;  flex-wrap: wrap; justify-content: space-between; margin: auto;}
+#tjanster > div > div{display: flex; flex-direction: row; justify-content: space-between; border-bottom: 2px solid rgb(54, 54, 54);}
+#tjanster > div > div > p{margin: 40px 0px 1px 0px;}
+
+/* OM OSS */
+#omosstitle{background-image: url(/img/image.jpg);height:50vh;}
+
+#omossbody{
+    grid-template-areas:
+    "hd"
+    "tit"
+    "omo"
+    "fot";
+}
+
+#omoss{grid-area: omo; height: 150vh;}
+#omoss > p{width: 80%; margin: 150px auto 0px auto;}
+
+
 /* ---MOBILE--- */
 @media screen and (max-width:750px) {
+    
+    header > div * {display: none;}
+    header > div > * {margin:0px 0px 0px 5vw;}
+    
+    .menu > ul > li > p {text-decoration: underline;}
+    .menu > ul > li * {width: max-content;}
     
     h1{font-size: 30vw}
     .button{font-size: 20px;}
     .larger{font-size:30px;}
     .menubutton{display:block;}
-    .menu{display: block;}
     .title{justify-content: center; height: 95vh;font-size: 3.7vw;align-items: center;}
     
     
@@ -244,20 +293,24 @@ footer > p{font-size: 25px;}
     #indexinfobox >div> img{width: 80vw; margin-top: 2.5vw;} /*images för indexinfo*/
     #oppentider > div{font-size: 15px; width: 80vw;}
     #flip{flex-direction: column;}
+
     
-    /* Domkyrkan */
+    /* SALONGER */
     #domkyrkantitle > .placename {margin: auto auto 4% auto; font-size: 10vw;}
+    #johannebergtitle > .placename {margin: auto auto 4% auto; font-size: 10vw;}
+    #tjanstertitle > .placename {margin: auto auto 4% auto; font-size: 13vw;}
+    #omosstitle > .placename {margin: auto auto 4% auto; font-size: 13vw;}
     
     .platsinfo{flex-direction: column; padding: 22vw 0px 10vw 0px;}
     .platsinfo > img{width: 90vw; height: auto; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;}
     .platsinfo > div{width: 85vw;}
     .platsinfo > div > div{width: 80vw;}    
-
+    
     .personer{padding-bottom: 15vw;}
     .personer > div{background-color: #4a4a4a; width:min-content; margin: 15vw auto 15vw auto; padding: 2.5vw 0vh 2.5vw 0vh; display: flex;flex-direction: column; justify-content: space-between; align-items: center;}
     .personer > div > div {width: 85vw; margin:0px 2vw 0px 2vw; font-size: 15px;}
     .personer > div > img{width: 85vw;}
-
+    
     .hittahit{flex-direction: column;}
     iframe{width: 90vw; height:40vh; display: block; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;margin-left: 4vw;}
     .hittahit > div{width: 80vw; display: flex; flex-direction: column; align-items: center; margin: 5vw auto 0px auto;}
@@ -265,46 +318,59 @@ footer > p{font-size: 25px;}
     .hittahit > div > div{display: flex; justify-content: space-between; width:100%;}
     #spacer{display: block; height: 25vw; margin-top:12vw;}
 
+
+     /* TJANSTER */
+    #tjanster > div {width: 80vw;}
+    #tjanster > div > div{width: 100%;}
+
 }
 
 
 /* ---DESKTOP--- */
 @media screen and (min-width:750px) {
-
+    
+    header > div > p {text-decoration: underline;}
+    header > div p {font-size: 16px; letter-spacing: 1px; font-weight: 1; margin-top: 8px; margin-bottom: 8px;}
+    .headboka{display: block; background-color:rgb(208,182,147); border-radius: 3px; padding: 7px; color:#2f2f2f; font-weight:900;}
+    header > div {width: 100%; display: flex; align-items: center;}
+    header > div > * {margin:0px 0px 0px 5vw;}
+    
     .button{font-size: max(1.5vw,20px);}
     .larger{font-size: min(max(2.5vw,30px),45px);}
+    
     .menubutton{display:none;}
     .menu{display: none;}
+    .menu *{display: none;}
+    
+    
     .title{height: 95vh;justify-content: center;align-items: center;}
     .title > p{font-size:25px;margin-top: -30px;}
     .title > *{margin-right: 55vw}
     
     
-    /* index */
+    /* INDEX */
     #salonger{display: flex;justify-content: space-around;}
     #salonger > *{width: 40vw;margin: 5vw;font-size: max(1vw,15px);}
-
+    
     #indexinfobox{padding-bottom: 5vw;}
     #indexinfobox>div{padding: 2.5vw 0vh 2.5vw 5vh;}
     #indexinfobox >div> img{width: 45vw;} /*images för indexinfo*/
     #indexinfobox > #flip{flex-direction: row-reverse;padding: 2.5vw 5vh 2.5vw 0vh;}
-
+    
     #oppentider > div{font-size:max(1vw,15px); width: 30vw;}
     #oppentider > a >*{margin: 2.5vw 0px 0px 0px;}
-
-
-    /* Domkyrkan */
-    #domkyrkantitle > .placename {margin: auto auto auto 25vw; font-size: 7vw;}
     
+    
+    /* SALONGER */
     .platsinfo{flex-direction: row; padding: 4vw 0px 4vw 0px;}
     .platsinfo > img{width: 46vw; min-height: 90%; margin-left: 4vw; object-fit: cover;}
     .platsinfo > div{width:30vw; margin-right: 10vw}
     .platsinfo > div > div{width: 100%;}
-
+    
     .personer > div{background-color: #4a4a4a; width:min-content; margin: 3vw auto 3vw auto; padding: 2.5vw 0vh 2.5vw 5vh; display: flex; justify-content: space-between;}
     .personer > div > div {width: 25vw; margin:0px 2.5vw 0px 2.5vw; font-size: 15px;}
     .personer > div > img{width: 35vw; object-fit: cover;}
-
+    
     .hittahit{flex-direction:row; padding-bottom: 5vw;}
     iframe{width: 46vw; min-height:25vw; display: block; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;margin-left: 4vw;}
     .hittahit > p{width: 100%;}
@@ -313,21 +379,28 @@ footer > p{font-size: 25px;}
     .hittahit > div > div{display: flex; justify-content: space-between; width:100%;}
     #spacer{display:none}
 
+
+    /* TJANSTER */
+    #tjanster > div {width: 80vw;}
+    #tjanster > div > div{width: 47%;}
+    
+    
+    /* ---JAVA SCRIPT--- */
+    .viewheader {
+        background-color:rgb(74, 74, 74, 1);
+        border:rgb(144, 144, 144, 1);
+        border-bottom-style: solid;
+        border-width: 1px;
+        padding-top: 0px;
+    }
 }
 
 
 
 
 /* ---JAVA SCRIPT--- */
-.showmenu{
-    left: 0;
+.hide{
+    background-color: rgb(0, 0, 0,0);
+    left: -100vw;
 }
-.visible{
-    display: block;
-}
-.viewheader {
-  background-color:rgb(74, 74, 74, 1);
-  border:rgb(144, 144, 144, 1);
-  border-bottom-style: solid;
-  border-width: 1px;
-}
+.hidee{color: rgba(235, 220, 205, 0); background-color: rgba(208,182,147,0);}
