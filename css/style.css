@@ -65,6 +65,7 @@ header{
 p{font-family:'inter'; color: rgba(235, 220, 205, 1);font-size: 14px;}
 a{color: inherit;text-decoration: none;}
 hr{width: 92vw; border:none;border-top: burlywood dashed 2px;}
+img{border-radius: 5px;}
 
 
 footer{
@@ -230,7 +231,7 @@ footer > p{font-size: 25px;}
 
 
 /* TJANSTER */
-#tjanstertitle{background-image: url(/img/1guvo59-hairdresser-4666064.jpg);height:50vh;}
+#tjanstertitle{background-image: url(/img/1guvo59-hairdresser-4666064.jpg);}
 
 
 #tjansterbody{
@@ -254,7 +255,7 @@ footer > p{font-size: 25px;}
 #tjanster > div > div > p{margin: 40px 0px 1px 0px;}
 
 /* OM OSS */
-#omosstitle{background-image: url(/img/image.jpg);height:50vh;}
+#omosstitle{background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)),url(/img/image.jpg);}
 
 #omossbody{
     grid-template-areas:
@@ -264,8 +265,23 @@ footer > p{font-size: 25px;}
     "fot";
 }
 
-#omoss{grid-area: omo; height: 150vh;}
-#omoss > p{width: 80%; margin: 150px auto 0px auto;}
+#omoss{grid-area: omo; background-color: #2c2c2c;}
+#omoss > div {max-width: 100%; width: min-content;display: flex; justify-content: space-between;}
+#omoss > div > div{display: flex; flex-direction: column; justify-content: center;align-items: start;}
+#omoss > div > div > .larger{font-size: 40px;}
+
+/* BOKA TID */
+#bokatidtitle{background-image: url(/img/mostafa_meraji-barber-shop-6797761\ -\ Copy.jpg); height: 100vh;}
+
+#bokatidbody{
+    grid-template-areas:
+    "hd"
+    "tit";
+}
+
+#bokatidtitle > div{position:absolute; margin: auto auto auto 25vw; text-align: center;}
+#bokatidtitle > div > p{letter-spacing: 1px; font-size: 25px; margin: 0px;}
+#bokatidtitle > div > a > p{display: block; background-color:rgb(208,182,147); padding: 15px 8vw 15px 8vw; letter-spacing: 3px; font-size: 17px; color: #2f2f2f; margin: 17px;}
 
 
 /* ---MOBILE--- */
@@ -323,6 +339,16 @@ footer > p{font-size: 25px;}
     #tjanster > div {width: 80vw;}
     #tjanster > div > div{width: 100%;}
 
+        /* OM OSS */
+    #omoss > div {flex-direction: column; margin: 100px auto 100px auto;}
+    #omoss > div > img{width:80vw;}
+    #omoss > div > div{width: 80vw;}
+    #omoss > div > div > .larger{margin: 25px auto 0px auto;}
+
+    /* BOKA TID */
+    #bokatidtitle > p{display: none;}
+    #bokatidtitle > h1{display: none;}
+    #bokatidtitle > div{margin: auto;}
 }
 
 
@@ -381,9 +407,24 @@ footer > p{font-size: 25px;}
 
 
     /* TJANSTER */
+    #tjanstertitle{height:50vh;}
+
     #tjanster > div {width: 80vw;}
     #tjanster > div > div{width: 47%;}
     
+
+    /* OM OSS */
+    #omosstitle{height:50vh;}
+    #omoss > div {flex-direction: row; margin: 150px auto 150px auto;}
+    #omoss > div > img{max-height: min(75vh,55vw);}
+    #omoss > div > div{max-width: 50%; width: 50vw;}
+    #omoss > div > div > .larger{margin: 0px;}
+    #omoss > #reverse{flex-direction: row-reverse;}
+
+
+    /* BOKA TID */
+    #bokatidtitle > div{position:absolute; margin: auto auto auto 25vw; text-align: center;}
+
     
     /* ---JAVA SCRIPT--- */
     .viewheader {
