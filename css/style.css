@@ -103,6 +103,7 @@ footer > p{font-size: 25px;}
     padding: 10px;
     text-shadow: none;
     font-weight: bolder;
+    border-radius: 3px;
 }
 .button:hover{color: rgb(75, 75, 75);background-color:rgb(235, 206, 168);}
 
@@ -285,7 +286,7 @@ footer > p{font-size: 25px;}
 
 
 /* ---MOBILE--- */
-@media screen and (max-width:750px) {
+@media screen and (max-width:749px) {
     
     header > div * {display: none;}
     header > div > * {margin:0px 0px 0px 5vw;}
@@ -353,7 +354,7 @@ footer > p{font-size: 25px;}
 
 
 /* ---DESKTOP--- */
-@media screen and (min-width:750px) {
+@media screen and (min-width:749px) {
     
     header > div > p {text-decoration: underline;}
     header > div p {font-size: 16px; letter-spacing: 1px; font-weight: 1; margin-top: 8px; margin-bottom: 8px;}
