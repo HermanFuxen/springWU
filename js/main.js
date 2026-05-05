@@ -10,11 +10,18 @@ function showhead(){
 }
 
 
-document.querySelector("img.menubutton").addEventListener("click",showMenu)
+const btn = document.querySelector("*.menubutton");
+const menu = document.getElementById("*.menu");
 
-document.querySelector("div.menu").addEventListener("click",showMenu)
+btn.addEventListener("click",showMenu)
+
+document.querySelector("nav.menu").addEventListener("click",showMenu)
 
 function showMenu(){
-  document.querySelector("div.menu").classList.toggle("hide");
-  document.querySelectorAll("div.menu p").forEach(p => {p.classList.toggle("hidee");});
+  const isOpen = btn.getAttribute("aria-expanded") === "true";
+  btn.setAttribute("aria-expanded", !isOpen);
+  
+  document.querySelector("nav.menu").classList.toggle("hide");
+  document.querySelectorAll("nav.menu li").forEach(p => {p.classList.toggle("hidee");});
+  menu.hidden = isOpen;
 };  

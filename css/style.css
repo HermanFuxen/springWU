@@ -52,23 +52,26 @@ header{
 .title > .placename {position: absolute; margin: auto auto auto 25vw; font-size: 7vw; text-shadow:0px 0px 15px rgba(0, 0, 0, 0.8);}
 
 
-.menubutton{margin: 5px 15px 5px 5px ;height: 35px;}
+.menubutton{margin: 5px 15px 5px 5px ;}
 
 .menu{
     position: fixed;
-    display: block;
+    display: flex;
     height: 100vh;
     width: 100vw;
     z-index: 9;
     left:0px;
     background-color: rgb(0, 0, 0,0.8);
     transition: background-color 0.3s ease-in-out;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
 }
-.menu > div {height: 100%;display: flex; flex-direction: column;align-items: center; justify-content: center;}
-.menu p{font-size: 30px; margin: 3vh; transition: color 0.3s ease-in-out,background-color 0.3s ease-in-out;}
-.menu > div > p{text-decoration: underline;}
-
-.headbok{display: block; background-color:var(--buttonbg); border-radius: 3px; padding: 7px; color:var(--darktext); font-weight:900;}
+.menu > ul {font-family:'inter'; color: var(--lighttext); list-style-type: none; height: max-content; padding: 0px;}
+.menu *{font-size: 30px; transition: color 0.3s ease-in-out,background-color 0.3s ease-in-out;}
+.menu > ul p{text-decoration: underline; color:inherit;}
+.menu > ul li{margin-top: 5vh;} 
+.menu > ul .headbok:not(.hidee > *){margin: auto; display: block; background-color:var(--buttonbg); border-radius: 3px; padding: 7px; color:var(--darktext); font-weight:900;}
 
 p{font-family:'inter'; color: var(--lighttext); font-size: 14px;}
 a{color: inherit;text-decoration: none;}
@@ -119,7 +122,7 @@ footer > p{font-size: 25px;}
 
 /* INDEX */
 
-#indextitle{background-image: url(/img/mostafa_meraji-barber-shop-5212059_1920.jpg);}
+#indextitle{background-image: url(/img/mostafa_meraji-barber-shop-5212059_1920.webp);}
 
 #index{
     grid-template-areas:
@@ -149,8 +152,8 @@ footer > p{font-size: 25px;}
     text-shadow: 2px 2px 4px black;
 }
 
-#salong1{background-image: url(/img/iffany-hairdressers-8848868_1280.jpg);}
-#salong2{background-image: url(/img/2Victor-Noblesse-high-51___media_library_original_4000_2668.jpg);}
+#salong1{background-image: url(/img/iffany-hairdressers-8848868_1280.webp);}
+#salong2{background-image: url(/img/2Victor-Noblesse-high-51___media_library_original_4000_2668.webp);}
 
 #indexinfobox{
     grid-area: inf;
@@ -191,8 +194,8 @@ footer > p{font-size: 25px;}
 
 /* SALONGER */
 /* SALONGER > salongspesefikt */
-#domkyrkantitle{background-image: url(/img/iffany-hairdressers-8848868_1280.jpg);}
-#johannebergtitle{background-image: url(/img/2Victor-Noblesse-high-51___media_library_original_4000_2668.jpg);}
+#domkyrkantitle{background-image: url(/img/iffany-hairdressers-8848868_1280.webp);}
+#johannebergtitle{background-image: url(/img/2Victor-Noblesse-high-51___media_library_original_4000_2668.webp);}
 
 
 
@@ -240,7 +243,7 @@ footer > p{font-size: 25px;}
 
 
 /* TJANSTER */
-#tjanstertitle{background-image: url(/img/1guvo59-hairdresser-4666064.jpg);}
+#tjanstertitle{background-image: url(/img/1guvo59-hairdresser-4666064.webp);}
 
 
 #tjansterbody{
@@ -264,7 +267,7 @@ footer > p{font-size: 25px;}
 #tjanster > div > div > p{margin: 40px 0px 1px 0px;}
 
 /* OM OSS */
-#omosstitle{background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)),url(/img/image.jpg);}
+#omosstitle{background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)),url(/img/image.webp);}
 
 #omossbody{
     grid-template-areas:
@@ -280,7 +283,7 @@ footer > p{font-size: 25px;}
 #omoss > div > div > .larger{font-size: 40px;}
 
 /* BOKA TID */
-#bokatidtitle{background-image: url(/img/mostafa_meraji-barber-shop-6797761\ -\ Copy.jpg); height: 100vh;}
+#bokatidtitle{background-image: url(/img/mostafa_meraji-barber-shop-6797761\ -\ Copy.webp); height: 100vh;}
 
 #bokatidbody{
     grid-template-areas:
@@ -299,13 +302,12 @@ footer > p{font-size: 25px;}
     header > div * {display: none;}
     header > div > * {margin:0px 0px 0px 5vw;}
     
-    .menu > ul > li > p {text-decoration: underline;}
-    .menu > ul > li * {width: max-content;}
-    
     h1{font-size: 30vw}
     .button{font-size: 20px;}
     .larger{font-size:30px;}
-    .menubutton{display:block;}
+    .menubutton{display:block; background: none; border: none;}
+    .menubutton > img{width: 35px;}
+
     .title{justify-content: center; height: 95vh;font-size: 3.7vw;align-items: center;}
     
     
@@ -364,8 +366,8 @@ footer > p{font-size: 25px;}
 /* ---DESKTOP--- */
 @media screen and (min-width:749px) {
     
-    header > div > p {text-decoration: underline;}
-    header > div p {font-size: 16px; letter-spacing: 1px; font-weight: 1; margin-top: 8px; margin-bottom: 8px;}
+    header > div > p {text-decoration: underline; font-size: 16px; margin-top: 8px; margin-bottom: 8px; letter-spacing: 1px}
+    header > div a {font-size: 16px; letter-spacing: 1px; font-weight: 1; margin-top: 8px; margin-bottom: 8px; font-family:'inter'; color: var(--lighttext);}
     .headboka{display: block; background-color:var(--buttonbg); border-radius: 3px; padding: 7px; color:var(--darktext); font-weight:900;}
     header > div {width: 100%; display: flex; align-items: center;}
     header > div > * {margin:0px 0px 0px 5vw;}
